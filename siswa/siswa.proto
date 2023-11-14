@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package siswa;
+
+option go_package = "golang_express_grpc/siswa";
+
+
+message Siswa {
+  string id = 1;
+  string nama = 2;
+  int32 umur = 3;
+}
+
+service SiswaService {
+  rpc GetSiswa (SiswaRequest) returns (Siswa);
+}
+
+message SiswaRequest {
+  string id = 1;
+}
+
